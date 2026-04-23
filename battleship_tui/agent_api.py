@@ -25,7 +25,6 @@ except ImportError as e:  # pragma: no cover
     ) from e
 
 from .engine import (
-    FLEET_ORDER,
     Game,
     PlaceResult,
     ShipKind,

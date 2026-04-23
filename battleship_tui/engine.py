@@ -25,7 +25,6 @@ from __future__ import annotations
 import enum
 import random
 from dataclasses import dataclass, field
-from typing import Callable, Iterator
 
 
 # -------- board dimensions --------
@@ -175,7 +174,7 @@ class Board:
 
     @property
     def fleet_sunk(self) -> bool:
-        return self.ships and all(s.is_sunk for s in self.ships)
+        return bool(self.ships) and all(s.is_sunk for s in self.ships)
 
     def ship_at(self, x: int, y: int) -> Ship | None:
         for s in self.ships:

@@ -2,15 +2,13 @@
 
 from __future__ import annotations
 
-from typing import Optional
-
 from rich.segment import Segment
 from rich.style import Style
 from textual import events
 from textual.app import App, ComposeResult
 from textual.binding import Binding
 from textual.containers import Horizontal, Vertical
-from textual.geometry import Region, Size
+from textual.geometry import Size
 from textual.message import Message
 from textual.reactive import reactive
 from textual.scroll_view import ScrollView
@@ -29,7 +27,6 @@ from .engine import (
     Phase,
     PlaceResult,
     SHIP,
-    ShipKind,
     ShotResult,
     TRACK_HIT,
     TRACK_MISS,
@@ -39,7 +36,6 @@ from .engine import (
 from .screens import (
     HelpScreen,
     LegendScreen,
-    NewGameScreen,
     PassBoardScreen,
     ResultScreen,
 )
