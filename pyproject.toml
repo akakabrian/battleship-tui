@@ -11,6 +11,8 @@ dependencies = [
 [project.optional-dependencies]
 # Agent REST API (opt-in, needed for --agent / --headless modes).
 agent = ["aiohttp>=3.8,<4"]
+# Dev extras (pty playtest harness).
+dev = ["pexpect>=4.9,<5"]
 
 [build-system]
 requires = ["setuptools"]

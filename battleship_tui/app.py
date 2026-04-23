@@ -803,9 +803,6 @@ class BattleshipApp(App):
         # For immediate feedback in QA/tests, play synchronously.
         # In interactive use we could stagger with set_timer but keep simple.
         results = self.game.ai_take_turn()
-        for r in results:
-            # Find the most recent shot in the log matching the AI's player.
-            pass
         # Announce each AI shot from the log (last N entries).
         recent = self.game.shot_log[-len(results):] if results else []
         for entry in recent:

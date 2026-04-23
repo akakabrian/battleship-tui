@@ -1,4 +1,4 @@
-.PHONY: all venv run test test-api test-only test-sound perf clean
+.PHONY: all venv run test test-api test-only test-sound playtest perf clean
 
 # Pure-Python engine — no SWIG build step needed (see DECISIONS.md).
 # `make all` gets you from fresh clone to ready-to-play in one command.
@@ -28,6 +28,10 @@ test-only: venv
 
 test-sound: venv
 	.venv/bin/python -m tests.sound_test
+
+# End-to-end pty + Pilot walkthrough — writes SVG snapshots under tests/out/.
+playtest: venv
+	.venv/bin/python -m tests.playtest
 
 perf: venv
 	.venv/bin/python -m tests.perf

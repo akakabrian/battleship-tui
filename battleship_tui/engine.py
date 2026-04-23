@@ -488,12 +488,9 @@ class Game:
 
     def _remaining_ship_lengths(self, player: int) -> list[int]:
         """Which enemy ship lengths are still in play (not known-sunk)?
-        We know a sunk ship by the revealed `tracking_sunk_cells`. Match
-        sunk-clusters to our known fleet composition and subtract them."""
-        sunk_cells = self.boards[player].tracking_sunk_cells
-        fleet = [s.kind.length for s in self.boards[1 - player].ships]
-        # Actually we can observe directly whether each enemy ship is sunk
-        # since we hold the full game state. Use that.
+        We hold the full game state, so observe `is_sunk` directly rather
+        than reconstructing from `tracking_sunk_cells` — same answer,
+        cheaper."""
         opp = self.boards[1 - player]
         return [s.kind.length for s in opp.ships if not s.is_sunk]
 

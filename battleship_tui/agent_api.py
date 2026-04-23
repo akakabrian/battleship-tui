@@ -71,7 +71,7 @@ class AgentAPI:
     async def _new_game(self, req: web.Request) -> web.Response:
         try:
             data = await req.json()
-        except (ValueError, Exception):
+        except Exception:
             data = {}
         mode = str(data.get("mode", "vs_ai"))
         ai = str(data.get("ai", "heatmap"))
@@ -95,7 +95,7 @@ class AgentAPI:
             x = int(data["x"])
             y = int(data["y"])
             horizontal = bool(data["horizontal"])
-        except (KeyError, TypeError, ValueError, Exception):
+        except Exception:
             return web.json_response(
                 {"error": "expected {player, kind, x, y, horizontal}"},
                 status=400,
@@ -120,7 +120,7 @@ class AgentAPI:
         try:
             data = await req.json()
             player = int(data["player"])
-        except (KeyError, TypeError, ValueError, Exception):
+        except Exception:
             return web.json_response({"error": "expected {player}"}, status=400)
         if player not in (0, 1):
             return web.json_response({"error": "player must be 0 or 1"}, status=400)
@@ -144,7 +144,7 @@ class AgentAPI:
             player = int(data["player"])
             x = int(data["x"])
             y = int(data["y"])
-        except (KeyError, TypeError, ValueError, Exception):
+        except Exception:
             return web.json_response(
                 {"error": "expected {player, x, y}"}, status=400,
             )
