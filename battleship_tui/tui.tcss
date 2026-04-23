@@ -1,0 +1,95 @@
+/* Battleship TUI — dark navy with amber accents (tactical console feel) */
+
+Screen {
+    background: #06080c;
+    color: #d8dde4;
+}
+
+#body {
+    height: 1fr;
+}
+
+#board-col {
+    width: 3fr;
+    height: 1fr;
+}
+
+#side {
+    width: 1fr;
+    height: 1fr;
+    min-width: 30;
+}
+
+#flash-bar {
+    height: 1;
+    padding: 0 1;
+    background: #0c1424;
+    color: rgb(240,200,120);
+}
+
+BoardsView {
+    height: 1fr;
+    border: round rgb(80,100,120);
+    border-title-color: rgb(240,200,120);
+    border-title-style: bold;
+    background: #06080c;
+    scrollbar-color: #2a3342 #0a0f18;
+    scrollbar-color-hover: rgb(200,170,110) #0a0f18;
+    scrollbar-color-active: rgb(245,190,80) #0a0f18;
+    scrollbar-size: 1 1;
+}
+
+#log {
+    height: 10;
+    border: round rgb(80,100,120);
+    border-title-color: rgb(240,200,120);
+    border-title-style: bold;
+    background: #06080c;
+}
+
+StatusPanel, FleetPanel, ControlsPanel {
+    border: round rgb(80,100,120);
+    border-title-color: rgb(240,200,120);
+    border-title-style: bold;
+    padding: 0 1;
+    background: #080c12;
+}
+
+StatusPanel  { height: 14; }
+FleetPanel   { height: 12; }
+ControlsPanel { height: 1fr; }
+
+Header {
+    background: #0c1424;
+    color: rgb(240,200,120);
+    text-style: bold;
+}
+
+Footer {
+    background: #0c1424;
+    color: rgb(200,170,110);
+}
+
+Footer > .footer--key {
+    background: #1a2234;
+    color: rgb(245,190,80);
+    text-style: bold;
+}
+
+/* Modal containers */
+
+#help-container, #legend-container, #result-container, #pass-container,
+#newgame-container {
+    width: 70%;
+    height: auto;
+    max-width: 80;
+    max-height: 30;
+    padding: 1 2;
+    border: round rgb(200,170,110);
+    border-title-color: rgb(240,200,120);
+    background: #0c1424;
+}
+
+#help-body, #legend-body, #result-body, #pass-body, #newgame-body {
+    padding: 0 1;
+}

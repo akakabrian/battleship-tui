@@ -1,0 +1,23 @@
+[project]
+name = "battleship-tui"
+version = "0.1.0"
+description = "Terminal-native Battleship — classic naval grid game in your shell"
+requires-python = ">=3.10"
+dependencies = [
+    # Textual 9+ may reshape Widget._render; cap until re-verified.
+    "textual>=0.80,<10",
+]
+
+[project.optional-dependencies]
+# Agent REST API (opt-in, needed for --agent / --headless modes).
+agent = ["aiohttp>=3.8,<4"]
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["battleship_tui"]
+
+[tool.setuptools.package-data]
+battleship_tui = ["tui.tcss"]
